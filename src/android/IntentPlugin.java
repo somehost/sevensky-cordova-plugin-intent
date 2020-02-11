@@ -38,9 +38,9 @@ public class IntentPlugin extends CordovaPlugin {
         if (appName != null && appName.length() > 0) {
             Intent intent = new Intent();
             intent.putExtras(bundle);
-            intent.setComponent(new ComponentName(appName, appName+"."+activityName));
+            intent.setComponent(new ComponentName(appName, activityName));
             this.cordova.getActivity().startActivity(intent);
-            callbackContext.success(appName+"."+activityName);
+            callbackContext.success(appName+"/"+activityName);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
